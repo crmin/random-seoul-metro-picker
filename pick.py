@@ -37,7 +37,7 @@ def pick_stations(pick_num, only_seoul):
     sys_random = SystemRandom()
     sys_random.shuffle(stations)
     picked_stations = stations[:pick_num]
-    print('\n'.join([each['station'] for each in picked_stations]))
+    return picked_stations
 
 
 if __name__ == '__main__':
@@ -48,4 +48,5 @@ if __name__ == '__main__':
         except ValueError:  # not number
             pass  # -> default value (=1)
 
-    pick_stations(pick_num, ONLY_SEOUL)
+    picked_stations = pick_stations(pick_num, ONLY_SEOUL)
+    print('\n'.join([each['station'] for each in picked_stations]))
