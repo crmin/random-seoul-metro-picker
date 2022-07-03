@@ -20,5 +20,5 @@
     * `only_seoul`: 서울 지하철만 사용할지 여부
 
 # License
-* 코드는 MIT License에 따라 사용할 수 있습니다.
+* 코드는 [MIT License](https://github.com/crmin/random-seoul-metro-picker/blob/master/LICENSE)에 따라 사용할 수 있습니다.
 * 추출된 wiki 데이터는 [크리에이티브 커먼즈 저작자표시-동일조건변경허락 3.0](https://ko.wikipedia.org/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:Creative_Commons_Attribution-ShareAlike_3.0_Unported_License)로 사용할 수 있습니다. 이 코드에는 해당 데이터가 포함되지 않습니다.
