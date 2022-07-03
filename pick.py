@@ -23,18 +23,16 @@ def read_stations_from_csv():
     return [dict(zip(column_names, line)) for line in csv_stations]
 
 
-def pick_stations():
+def pick_stations(pick_num, only_seoul):
+    """
+    Args:
+        pick_num (int): 뽑을 역 개수
+        only_seoul (bool): 서울만 포함하는지 여부
+    """
     stations = read_stations_from_csv()
 
-    if ONLY_SEOUL:
+    if only_seoul:
         stations = [each for each in stations if '서울특별시' in each['location']]
-
-    pick_num = 1
-    if len(sys.argv) == 2:
-        try:
-            pick_num = int(sys.argv[1])
-        except ValueError:  # not number
-            pass  # -> default value (=1)
 
     sys_random = SystemRandom()
     sys_random.shuffle(stations)
@@ -43,4 +41,11 @@ def pick_stations():
 
 
 if __name__ == '__main__':
-    pick_stations()
+    pick_num = 1
+    if len(sys.argv) == 2:
+        try:
+            pick_num = int(sys.argv[1])
+        except ValueError:  # not number
+            pass  # -> default value (=1)
+
+    pick_stations(pick_num, ONLY_SEOUL)
